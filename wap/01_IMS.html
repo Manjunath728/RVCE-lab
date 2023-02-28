@@ -1,0 +1,368 @@
+<html>
+
+<head>
+    <title>Inventory Mangement</title>
+    <link rel="stylesheet" scr="">
+    <style>
+        *{
+            font-family: Verdana;
+        }
+        
+        body {
+            margin: 0;
+            
+            
+        }
+
+        .content {
+            width: 80%;
+            height: 100%;
+            margin-left: 20%;
+        }
+
+        .header {
+            display: flex;
+            width: 100%;
+            height: 60px;
+            background-color: white;
+            border-bottom: 1px solid #B4B4B4;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            margin: 0;
+            padding: 0;
+            width: 20%;
+            height: 100%;
+            position: fixed;
+            overflow: auto;
+            background-color: #232323;
+        }
+
+        .navlist {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            text-align: center;
+        }
+
+
+        .navlist a {
+            margin: 10px 30px;
+            font-family: 'verdana', 'sans-serif';
+            text-decoration: none;
+            color: white;
+            display: block;
+            font-size: 20px;
+            border-radius: 5px;
+            padding: 10px;
+            font-weight: 600;
+        }
+
+        li a.active {
+            background-color: #FF3737;
+        }
+
+        .navlist li a:hover:not(.active) {
+            background-color: #555;
+
+        }
+
+        .stats {
+            display: flex;
+        }
+        
+        .container1{
+            display: flex;
+            border-bottom:1px solid #656565;
+            
+        
+        }
+        .box{
+            width:33%;
+            margin:33px;
+            border: 1px solid #656565;
+            border-radius: 9px;
+            background-color: white;
+            box-shadow: -1px 1px 5px #656565   ;
+        }
+        #box1:hover{
+            transform: scale(1.1);
+            background-color: aqua;
+            box-shadow: -2px 2px 10px #656565   ;
+        }
+        #box2:hover{
+            transform: scale(1.1);
+            background-color: aqua;
+            box-shadow: -2px 2px 10px #656565   ;
+        }
+        #box3:hover{
+            transform: scale(1.1);
+            background-color: aqua;
+            box-shadow: -2px 2px 10px #656565   ;
+        }
+        .box-number{
+            text-align: center;
+            font-size: 52px;
+            padding: 20px;
+            font-weight: 600;
+        }
+        .box-text{
+            text-align: center;
+        }
+        .section1{
+            display: flex;  
+            box-shadow: -2px 2px 8px #656565 ;
+        }
+        .products{
+            width:60%;
+        }
+        .top-sell{
+            width:33%
+        }
+        #products-details{
+           width: 100%;
+            height: 150px;
+            border: 1px solid #b6b6b6;
+            box-shadow: -2px 2px 8px #656565   ;
+            border-collapse: collapse ;
+            border-radius: 6px;
+            margin: 20px;
+        }
+        
+        #products-details tr th{
+            background-color: #FF3737;
+            text-align: left;
+            color: white;
+            padding: 13px;
+            
+        }
+        
+        #products-details tr td{
+            padding: 13px;
+           
+        }
+
+        #products-details tr:nth-child(even) {
+            background-color: lightslategrey;
+            color: white;
+        }
+        #top-sell{
+            width:100%;
+            height: 180px;
+            border: 1px solid #b6b6b6;
+            box-shadow: -2px 2px 8px #656565   ;
+            border-collapse: collapse ;
+            border-radius: 6px;
+            margin: 21px;
+            margin-left:50px;
+            
+        }
+        #top-sell td{
+            text-align: center;
+            align-items: center;
+            border-left: 1px solid #b6b6b6;
+        }
+        .top-products img {
+            margin: 15px;
+            width:80px;
+            height:80px;
+            border-radius: 10px;
+        }
+        caption{
+            text-align: left; font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: 600;font-size: 20px;color: #656565;padding: 4px;
+        }
+        .footer{
+            width: 80%;
+            position: absolute;
+            bottom: 0;
+            height: 40px;
+            
+            background-color: #FF3737;
+            padding-top:20px;
+            color: #f6fdffc1;
+            text-align: center;
+            box-shadow: 0px -3px 8px #b6b6b6;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <h2 class="logo"
+            style="text-align:center;font-family: 'Impact';font-style: normal;font-weight: 800;color:#FF3737;font-size:45px">
+            LOGO</h2>
+        <nav>
+            <ul class="navlist">
+                <li><a class="active" href="#home">Dashboard</a></li>
+                <li><a href="#">Inventory</a></li>
+                <li><a href="#">Sales</a></li>
+                <li><a href="#">Purchase</a></li>
+                <li><a href="#">Report</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <header>
+            <div class="header">
+                <input type="text"
+                    style="background-color:#F6FdFF;margin:9px 20px;box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.25);padding:0 30px;font-size:24px;width:40%;height:70%;border-radius:24px;"
+                    placeholder="search"></input>
+                <div
+                    style="width:50px;height:50px;background-color:#FF3737; border-radius:50px;margin: 4px 5px 4px 650px ;border-style:solid;border-width:2px">
+
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main">
+                <article>
+                    <p>
+                        <span style="font-size: 24px;font-weight: 600;margin: 12px;color: #656565;">
+                            Sales Activity
+                        </span>
+                    </p>
+                    <div class="container1">
+                        <div class="box" id="box1">
+                            <div class="box-number"  style="color:red;">
+                                297
+                            </div>
+                            <div class="box-text" >
+                                <p>Orderplaced</p>
+                            </div>
+                        </div>
+                        <div class="box"id="box2">
+                            <div class="box-number"  style="color:green;">
+                                456
+                            </div>
+                            <div class="box-text">
+                                <p>To be shipped</p>
+                            </div>
+                        </div>
+                        <div class="box"id="box3">
+                            <div class="box-number" style="color:blue;">
+                                297
+                            </div>
+                            <div class="box-text">
+                                <p>To be delivered</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <section>
+                    <div class="section1">
+                        <div class="products">
+                            <table id="products-details"> 
+                                <caption >  Products Details</caption>
+                                <tr>
+                                    <th>products</th>
+                                    <th>Name</th>
+                                    <th>Cost price</th>
+                                    <th>Stock left</th>
+                                </tr>
+                                <tr>
+                                    <td>74832</td>
+                                    <td>item 1</td>
+                                    <td>48</td>
+                                    <td>4789</td>
+                                </tr>
+                                <tr>
+                                    <td>74832</td>
+                                    <td>item 1</td>
+                                    <td>48</td>
+                                    <td>4789</td>
+                                </tr>
+                                <tr>
+                                    <td>74832</td>
+                                    <td>item 1</td>
+                                    <td>48</td>
+                                    <td>4789</td>
+                                </tr>
+                                <tr>
+                                    <td>74832</td>
+                                    <td>item 1</td>
+                                    <td>48</td>
+                                    <td>4789</td>
+                                </tr>
+                                <tr>
+                                    <td>74832</td>
+                                    <td>item 1</td>
+                                    <td>48</td>
+                                    <td>4789</td>
+                                </tr>
+                                <tr>
+                                    <td>74832</td>
+                                    <td>item 1</td>
+                                    <td>48</td>
+                                    <td>4789</td>
+                                </tr>
+                                <tr>
+                                    <td>74832</td>
+                                    <td>item 1</td>
+                                    <td>48</td>
+                                    <td>4789</td>
+                                </tr>
+                                <tr>
+                                    <td>74832</td>
+                                    <td>item 1</td>
+                                    <td>48</td>
+                                    <td>4789</td>
+                                </tr>   
+                            </table>
+                        </div>
+                        <div class="top-sell">
+                            <table id="top-sell"> 
+                                <caption> Top sell</caption>
+                                <tr>
+                                    <td><div class="top-products"></div></td>
+                                    <td><div class="top-products"></div></td>
+                                    <td><div class="top-products"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Item 1 </td>
+                                    <td>Item 2 </td>
+                                    <td>item 3 </td>
+
+                                </tr>
+                                <tr>
+                                    <td>171 pcs </td>
+                                    <td>171 pcs </td>
+                                    <td>171 pcs </td>
+
+                                </tr>
+                            </table>
+                            <table id="top-sell"> 
+                                <caption> Top sell</caption>
+                                <tr>
+                                    <td><div class="top-products"><img src="img.jpg" alt="image"></div></td>
+                                    <td><div class="top-products"></div></td>
+                                    <td><div class="top-products"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Item 1 </td>
+                                    <td>Item 2 </td>
+                                    <td>item 3 </td>
+
+                                </tr>
+                                <tr>
+                                    <td>171 pcs </td>
+                                    <td>171 pcs </td>
+                                    <td>171 pcs </td>
+
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+        <footer class="footer">
+            <span>2023 @ reserved company.pvt.ltd</span>
+        </footer>
+    </div>
+</body>
+
+</html>
