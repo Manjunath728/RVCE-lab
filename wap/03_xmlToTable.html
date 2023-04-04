@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xml to html</title>
+</head>
+<body>
+    <button type="button" onclick="loadxml()">cm</button>
+    <table id="xml"></table>
+    <script>
+        function loadxml(){
+            var xmlhttp= new XMLHttpRequest();
+            xmlhttp.onreadystatechange =function(){
+                if (this.readyState==4 && this.status==200){
+                    myFunction(this)
+                }
+
+            }
+            xmlhttp.open("GET" ,"03.xml" ,true)
+            xmlhttp.send()
+            function myFunction(xml){
+                var i
+                var xmlDoc=xml.responseXML;
+                var table="<tr><th>Student name</th></tr>"
+                var x= xmlDoc.getElementsByTagName("student")
+                for (i=0;i<x.length;i++){
+                    table+="<tr><td>"+x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+"</td></th>"
+                }
+                document.getElementById("xml").innerHTML=table
+            }
+        }
+    </script>
+</body>
+</html>
