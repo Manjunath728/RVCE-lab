@@ -3,94 +3,311 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Book Store</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ims</title>
+    <style>
+        *{
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+          
+        }
+        nav{
+            width: 20%;
+            height: 100%;   
+            position: fixed;
+            background-color: rgb(48, 48, 48);
+        }
+        main{
+            width: 80%;
+            height: 100%;
+            margin-left:20% ;
+            position: fixed;
+        }
+        .logo{
+            
+            font-style: normal;
+            font-weight: 800;
+            color:red;
+            font-size:45px;
+            
+        }
+        .navlist{
+            margin-top: 30px;
+            list-style-type: none;
+            text-align: center;
+           
+        }
+        .navlist a{
+            margin: 10px 40px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            font-size: 20px;
+            border-radius: 5px;
+            padding: 10px;
+            font-weight: 600;
+        }
+        .active a{
+            background-color: red;
+        }
+        .navlist li a:hover{
+           background-color: white;
+           color: black;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 60px;
+            background-color: white;
+            border-bottom: 1px solid #B4B4B4;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .heading{
+            margin:5px 20px;
+            font-size: 24px;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .box{
+            
+            
+            width: 25%;
+            height: 150px;
+            margin: 20px;
+            border-radius: 20px;
+            background-color: rgb(142, 255, 255);
+            border:2px solid  rgb(142, 255, 255);
+            
+        }
+        .box:hover{
+            scale: 1.05;
+            border:2px solid rgb(0, 181, 181);
+            box-shadow: 0px 6px 2px  rgb(0, 184, 184);
+            transform: translateY(-10px);
+            transition: all .4s ease;
+        }
+        .num{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 75%;
+            width: 100%;
+            text-align: center;
+            font-size: 55px;
+            font-weight: 600;
+        }
+        .text{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .tab{
+            height: 400px;
+            
+            display: flex;
+            justify-content: space-between;
+        }
+        .product{
+            width: 50%;
+        }
+        .left{
+            width: 50%;
+            
+        }
+        .divide{
+            width:100%;
+            height: 50%;
+        }
+        #table{
+            margin: 20px;
+            width: 90%;
+            border: solid 1px grey;
+            border-collapse: collapse ;
+            
+        }
+        #table th {
+            background-color: red;
+            color: white;
+            padding: 10px;
+
+           
+
+        }
+        #table td {
+            
+            padding: 10px;
+            text-align: center;
+           
+
+        }
+        .top-sell{
+    display: flex;
+    margin: 20px;
+        }
+        .item{
+            width:33.33%;
+            height: 130px;
+            border: 1px solid grey;
+        }
+        
+        .img{
+            width: 100%;
+            height: 75%;
+            background-color: red;
+        }
+        .txt{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+        }
+
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Book Store</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Books</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Authors</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
+    <nav>
+        <hi class="logo" >Company</hi>
+        <ul class="navlist">
+            <li class="active"><a href="#">Dashboard</a></li>
+            <li><a href="#">sales report</a></li>
+            <li><a href="#">purchase report </a></li>
+            <li><a href="#">inventory</a></li>
+            <li><a href="#">Delivery</a></li>
+        </ul>
     </nav>
 
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card">
-                    <img class="card-img-top" src="https://picsum.photos/800/400/?random" alt="Book Cover">
-                    <div class="card-body">
-                        <h5 class="card-title">Featured Book Title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis,
-                            magna at consectetur aliquam, nibh magna interdum libero, ac consequat felis metus a nisi.
-                            Sed vulputate neque sed lectus luctus, nec placerat lectus iaculis. Sed non libero non quam
-                            sodales dignissim vel in enim. Cras a ex odio. Donec efficitur orci at metus convallis, nec
-                            mollis ex ultrices. Nam vitae purus in arcu convallis varius. Fusce venenatis gravida
-                            tellus, vel tristique nulla. Vivamus maximus mi lorem, ac aliquam neque convallis ac.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
+    <main>
+        <header>
+            <h2 style="text-align: center;width: 50%;">Welcome to Inventory </h2>
+            <div style="display: flex;justify-content: space-between;align-items: center;width:15%">
+                <p>Username</p>
+                <i class="fa-solid fa-user"></i>
+                <div style="width: 30px;height: 30px ; background-color: red;border-radius: 15px;margin-right: 10px; "></div>
+
+            </div>
+        </header>
+        <section>
+            <div style="display: flex;justify-content: space-between;" >
+                <div class="heading">Sales activity</div>
+                <input type="text" placeholder="search" style="margin: 5px 30px" >
+            </div>
+           
+            <div class="container">
+                <div class="box">
+                    <div class="num" style="color: red;">26534</div>
+                    <div class="text">order placed</div>
+                </div>
+                <div class="box">
+                    <div class="num" style="color: green;">765</div>
+                    <div class="text">to be packaged</div>
+                </div>
+                <div class="box">
+                    <div class="num" style="color: blue;">7235</div>
+                    <div class="text">out for delivery</div>
+                </div>
+                <div class="box">
+                    <div class="num" style="color: orange;">91287</div>
+                    <div class="text">delivered</div>
+                </div>
+            </div>
+            <div class="heading">Product details</div>
+            <div class="tab" >
+                <div class="product">
+                    <table id="table">
+                        <tr>
+                            <th>id</th><th>name</th><th>price</th><th>stock</th>
+                        </tr>
+                        <tr><td>1</td><td>item 1</td><td>200 rs </td><td>476587</td></tr>
+                        <tr><td>1</td><td>item 1</td><td>200 rs </td><td>476587</td></tr>
+                        <tr><td>1</td><td>item 1</td><td>200 rs </td><td>476587</td></tr>
+                        <tr><td>1</td><td>item 1</td><td>200 rs </td><td>476587</td></tr>
+                        <tr><td>1</td><td>item 1</td><td>200 rs </td><td>476587</td></tr>
+                        <tr><td>1</td><td>item 1</td><td>200 rs </td><td>476587</td></tr>
+                        <tr><td>1</td><td>item 1</td><td>200 rs </td><td>476587</td></tr>
+                        <tr><td>1</td><td>item 1</td><td>200 rs </td><td>476587</td></tr>
+                        <tr><td>1</td><td>item 1</td><td>200 rs </td><td>476587</td></tr>
+                    </table>
+                </div>
+                <div class="left">
+                    <div class="divide">
+                        <div class="heading">Top selling</div>
+                        <div class="top-sell">
+                            <div class="item">
+                                <div class="img">
+
+                                </div>
+                                <div class="price">
+                                    <p>100 pcs</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img">
+
+                                </div>
+                                <div class="price">
+                                    100 rs
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img">
+
+                                </div>
+                                <div class="price">
+                                    100 rs
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divide">
+                        <div class="heading">Top rated</div>
+                        <div class="top-sell">
+                            <div class="item">
+                                <div class="img">
+
+                                </div>
+                                <div class="price">
+                                    100 rs
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img">
+
+                                </div>
+                                <div class="price">
+                                    100 rs
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img">
+
+                                </div>
+                                <div class="price">
+                                    100 rs
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://picsum.photos/400/400/?random" alt="Book Cover">
-                    <div class="card-body">
-                        <h5 class="card-title">Other Book Title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis,
-                            magna at consectetur aliquam, nibh magna interdum libero, ac consequat felis metus a nisi.
-                        </p>
-                        <a href="#" class="btn btsecondary">Read More</a>
-                    </div>
-                </div>
-                <div class="card mt-3">
-                    <img class="card-img-top" src="https://picsum.photos/400/400/?random" alt="Book Cover">
-                    <div class="card-body">
-                        <h5 class="card-title">Another Book Title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis,
-                            magna at consectetur aliquam, nibh magna interdum libero, ac consequat felis metus a nisi.
-                        </p>
-                        <a href="#" class="btn btn-secondary">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer class="mt-5 py-3 bg-dark text-white text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <p>Book Store &copy; 2023</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </section>
+        <footer>
+
+        </footer>
+    </main>
 </body>
 
 </html>

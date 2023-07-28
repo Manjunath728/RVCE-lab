@@ -1,0 +1,68 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>d333</title>
+    </head>
+
+    <body>
+        <center>
+            <h1>Bar graph</h1>
+            <h1>Enter student eletives</h1>
+            
+            <button id="b1">elective 1</button>
+            <button id="b2">elective 2</button>
+            <button id="b3">elective 3</button>
+            <button id="b4">elective 4</button>
+            <button id="b5">elective 5</button>
+        </center>
+        <center>
+            <svg></svg>
+        </center>
+        <script src="https://d3js.org/d3.v6.min.js"></script> <!-- Include D3.js library -->
+
+        <script>
+            var data = [100, 150, 200,175, 120];
+            ['b1', 'b2', 'b3', 'b4', 'b5'].forEach((d, i) => {
+                document.getElementById(d).addEventListener('click', () => {
+                    data[i] += 1;
+                    updateChart();
+                    console.log('am working')
+                });
+            });
+
+            var svgHeight = 600,
+                svgWidth = 1000,
+                barPadding = 5;
+            var barWidth = svgWidth / data.length;
+            var svg = d3.select('svg')
+                .attr('width', svgWidth)
+                .attr('height', svgHeight);
+
+            var updateChart = () => {
+                var maxData = d3.max(data);
+            var scaleFactor = svgHeight/ maxData;
+                var rect = svg.selectAll('rect')
+                    .data(data);
+
+                rect.enter()
+                    .append('rect')
+                    .merge(rect)
+                    .attr('y', (d) => svgHeight - d*scaleFactor)
+                    .attr('width', barWidth - barPadding)
+                    .attr('height', (d) => d*scaleFactor)
+
+                    .attr('transform', (d, i) => 'translate(' + barWidth * i + ', 0)');
+
+                var text = svg.selectAll('text').data(data);
+                text.enter().append('text').merge(text).text(d => d).attr('y', d => svgHeight - d*scaleFactor - 2).attr('x', (d, i) => barWidth / 2 + barWidth * i).attr('fill', 'red')
+            };
+
+        </script>
+
+    </body>
+
+    </html>

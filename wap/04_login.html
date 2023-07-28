@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Login</title>
+</head> 
+<body>
+    <main class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white  ">
+                        Login
+                    </div>
+                    <div class="card-body">
+                        <form id="myForm" >
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="text" class="form-control" id="password">
+                            </div>
+                            <button type="button" class="btn btn-primary w-100" onclick="validate()"> Submit</button>
+                            <div id="message"></div>
+                            
+
+                        </form>
+                        <div class="my-3">
+                            <div id="myname"></div>
+                            <div id="Date"></div>   
+                        </div>
+                        <div class="container my-3 bg-primary p-4  " id="ele">
+                            RV College of enginering
+                        </div>
+                        <button class="btn btn-primary w-100 mb-3" onclick="changeColor()">change colour</button>
+
+                        <button class="btn btn-primary w-100" onclick="changeBG()">change background colour</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function changeColor(){
+            document.getElementById("ele").classList.toggle("text-danger")
+        }
+        function changeBG(){
+            document.getElementById("ele").classList.toggle("bg-primary")
+        }
+        function validate(){
+            var username=document.getElementById("username").value
+            var password=document.getElementById("password").value
+            console.log(username +" "+password)
+            nameregx=/^[a-zA-Z0-9]+$/
+            passregx=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@!#]).{8,}$/
+
+            if(nameregx.test(username) && passregx.test(password)){
+                document.getElementById('message').innerHTML='<div class="alert alert-success mt-3" >Login sucessfull</div>'
+                var curdate= new Date
+                document.getElementById('myname').innerHTML='NAME : <b>'+username+'</b>'
+                document.getElementById('Date').innerHTML='DATE : <b>'+curdate+'</b>'
+            }else{
+                document.getElementById('myname').innerHTML=''
+                document.getElementById('Date').innerHTML=''
+                document.getElementById('message').innerHTML='<div class="alert alert-danger mt-3" >Invalid username or password</div>'
+            }
+                     
+        }
+    </script>
+</body>
+</html>
+
+

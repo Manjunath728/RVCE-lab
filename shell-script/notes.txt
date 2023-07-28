@@ -1,0 +1,499 @@
+﻿manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ man cut
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" 1 emp1.lst 
+cut: you must specify a list of bytes, characters, or fields
+Try 'cut --help' for more information.
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -1 emp1.lst 
+cut: invalid option -- '1'
+Try 'cut --help' for more information.
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ man cut
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 1 emp1.lst 
+2233
+9876
+5678
+2365
+5423
+1006
+
+6213
+1265
+
+4290
+2476
+6521
+3212
+
+3564
+2345
+0110
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -f 5 emp1.lst 
+2233|a.k. shukla      |g.m        |sales      |12/12/52| 90000
+9876|jai sharma       |director   |production |03/12/50|130000
+5678|sumit chakrobarty|d.g.m      |marketing  |04/19/43| 85000
+2365|barun sengupta   |director   |personnel  |05/11/47|120000
+5423|n.k. gupta       |chairman   |admin      |08/30/56|160000
+1006|chanchal singhvi |director   |sales      |09/03/38|140000
+
+6213|karuna ganguly   |g.m.       |accounts   |06/05/62|105000 
+1265|s.n. dasgupta    |manager    |sales      |09/12/63| 90000
+
+4290|jayant Choudhury |executive  |production |09/07/50| 65000 
+2476|anil aggarwal    |manager    |sales      |05/01/59|110000
+6521|lalit chowdury   |director   |marketing  |09/26/45|125000
+3212|shyam saksena    |d.g.m.     |accounts   |12/12/55| 85000
+
+3564|sudhir Agarwal   |executive  |personnel  |07/06/47| 75000
+2345|j.b. saxena      |g.m.       |marketing  |03/12/45|110000
+0110|v.k agrawal      |g.m.       |marketing  |12/31/40| 95000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -f 1 emp1.lst 
+2233|a.k. shukla      |g.m        |sales      |12/12/52| 90000
+9876|jai sharma       |director   |production |03/12/50|130000
+5678|sumit chakrobarty|d.g.m      |marketing  |04/19/43| 85000
+2365|barun sengupta   |director   |personnel  |05/11/47|120000
+5423|n.k. gupta       |chairman   |admin      |08/30/56|160000
+1006|chanchal singhvi |director   |sales      |09/03/38|140000
+
+6213|karuna ganguly   |g.m.       |accounts   |06/05/62|105000 
+1265|s.n. dasgupta    |manager    |sales      |09/12/63| 90000
+
+4290|jayant Choudhury |executive  |production |09/07/50| 65000 
+2476|anil aggarwal    |manager    |sales      |05/01/59|110000
+6521|lalit chowdury   |director   |marketing  |09/26/45|125000
+3212|shyam saksena    |d.g.m.     |accounts   |12/12/55| 85000
+
+3564|sudhir Agarwal   |executive  |personnel  |07/06/47| 75000
+2345|j.b. saxena      |g.m.       |marketing  |03/12/45|110000
+0110|v.k agrawal      |g.m.       |marketing  |12/31/40| 95000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ man cut
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 5 emp1.lst 
+12/12/52
+03/12/50
+04/19/43
+05/11/47
+08/30/56
+09/03/38
+
+06/05/62
+09/12/63
+
+09/07/50
+05/01/59
+09/26/45
+12/12/55
+
+07/06/47
+03/12/45
+12/31/40
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 5 emp1.lst | cut -c 2 
+2
+3
+4
+5
+8
+9
+
+6
+9
+
+9
+5
+9
+2
+
+7
+3
+2
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 5 emp1.lst | cut -c 1-2 
+12
+03
+04
+05
+08
+09
+
+06
+09
+
+09
+05
+09
+12
+
+07
+03
+12
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 5 emp1.lst | cut -c -2 
+12
+03
+04
+05
+08
+09
+
+06
+09
+
+09
+05
+09
+12
+
+07
+03
+12
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ man cut
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 5 emp1.lst 
+12/12/52
+03/12/50
+04/19/43
+05/11/47
+08/30/56
+09/03/38
+
+06/05/62
+09/12/63
+
+09/07/50
+05/01/59
+09/26/45
+12/12/55
+
+07/06/47
+03/12/45
+12/31/40
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 5 -s 2 emp1.lst 
+cut: 2: No such file or directory
+12/12/52
+03/12/50
+04/19/43
+05/11/47
+08/30/56
+09/03/38
+06/05/62
+09/12/63
+09/07/50
+05/01/59
+09/26/45
+12/12/55
+07/06/47
+03/12/45
+12/31/40
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 5 -s -2 emp1.lst 
+cut: invalid option -- '2'
+Try 'cut --help' for more information.
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ 
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -fs -2 emp1.lst 
+cut: invalid option -- '2'
+Try 'cut --help' for more information.
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ man cut
+
+[1]+  Stopped                 man cut
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ man sed 
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ 
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ head -5 emp1.lst
+2233|a.k. shukla      |g.m        |sales      |12/12/52| 90000
+9876|jai sharma       |director   |production |03/12/50|130000
+5678|sumit chakrobarty|d.g.m      |marketing  |04/19/43| 85000
+2365|barun sengupta   |director   |personnel  |05/11/47|120000
+5423|n.k. gupta       |chairman   |admin      |08/30/56|160000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ head -5 emp1.lst | tee shortlist
+2233|a.k. shukla      |g.m        |sales      |12/12/52| 90000
+9876|jai sharma       |director   |production |03/12/50|130000
+5678|sumit chakrobarty|d.g.m      |marketing  |04/19/43| 85000
+2365|barun sengupta   |director   |personnel  |05/11/47|120000
+5423|n.k. gupta       |chairman   |admin      |08/30/56|160000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ ls
+emp1.lst  emp.lst  short  shortlist  shortlist1  weeks.txt
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cat short
+22
+98
+56
+23
+54
+10
+
+62
+12
+
+42
+24
+65
+32
+
+35
+23
+01
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cat shortlist
+2233|a.k. shukla      |g.m        |sales      |12/12/52| 90000
+9876|jai sharma       |director   |production |03/12/50|130000
+5678|sumit chakrobarty|d.g.m      |marketing  |04/19/43| 85000
+2365|barun sengupta   |director   |personnel  |05/11/47|120000
+5423|n.k. gupta       |chairman   |admin      |08/30/56|160000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ rm short
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cat shortlist
+2233|a.k. shukla      |g.m        |sales      |12/12/52| 90000
+9876|jai sharma       |director   |production |03/12/50|130000
+5678|sumit chakrobarty|d.g.m      |marketing  |04/19/43| 85000
+2365|barun sengupta   |director   |personnel  |05/11/47|120000
+5423|n.k. gupta       |chairman   |admin      |08/30/56|160000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 2,3 emp1.lst
+a.k. shukla      |g.m        
+jai sharma       |director   
+sumit chakrobarty|d.g.m      
+barun sengupta   |director   
+n.k. gupta       |chairman   
+chanchal singhvi |director   
+
+karuna ganguly   |g.m.       
+s.n. dasgupta    |manager    
+
+jayant Choudhury |executive  
+anil aggarwal    |manager    
+lalit chowdury   |director   
+shyam saksena    |d.g.m.     
+
+sudhir Agarwal   |executive  
+j.b. saxena      |g.m.       
+v.k agrawal      |g.m.       
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 2,3 shortlist | tee cutlist 
+a.k. shukla      |g.m        
+jai sharma       |director   
+sumit chakrobarty|d.g.m      
+barun sengupta   |director   
+n.k. gupta       |chairman   
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 1,4- shortlist | tee cutlist2 
+2233|sales      |12/12/52| 90000
+9876|production |03/12/50|130000
+5678|marketing  |04/19/43| 85000
+2365|personnel  |05/11/47|120000
+5423|admin      |08/30/56|160000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ paste cutlist cutlist2
+a.k. shukla      |g.m        	2233|sales      |12/12/52| 90000
+jai sharma       |director   	9876|production |03/12/50|130000
+sumit chakrobarty|d.g.m      	5678|marketing  |04/19/43| 85000
+barun sengupta   |director   	2365|personnel  |05/11/47|120000
+n.k. gupta       |chairman   	5423|admin      |08/30/56|160000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cat cutlist
+a.k. shukla      |g.m        
+jai sharma       |director   
+sumit chakrobarty|d.g.m      
+barun sengupta   |director   
+n.k. gupta       |chairman   
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cat cutlist2
+2233|sales      |12/12/52| 90000
+9876|production |03/12/50|130000
+5678|marketing  |04/19/43| 85000
+2365|personnel  |05/11/47|120000
+5423|admin      |08/30/56|160000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ paste cutlist cutlist2
+a.k. shukla      |g.m        	2233|sales      |12/12/52| 90000
+jai sharma       |director   	9876|production |03/12/50|130000
+sumit chakrobarty|d.g.m      	5678|marketing  |04/19/43| 85000
+barun sengupta   |director   	2365|personnel  |05/11/47|120000
+n.k. gupta       |chairman   	5423|admin      |08/30/56|160000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ man paste
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ paste -s cutlist cutlist2
+a.k. shukla      |g.m        	jai sharma       |director   	sumit chakrobarty|d.g.m      	barun sengupta   |director   	n.k. gupta       |chairman   
+2233|sales      |12/12/52| 90000	9876|production |03/12/50|130000	5678|marketing  |04/19/43| 85000	2365|personnel  |05/11/47|120000	5423|admin      |08/30/56|160000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ man paste
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ paste -z cutlist cutlist2
+a.k. shukla      |g.m        
+jai sharma       |director   
+sumit chakrobarty|d.g.m      
+barun sengupta   |director   
+n.k. gupta       |chairman   
+	2233|sales      |12/12/52| 90000
+9876|production |03/12/50|130000
+5678|marketing  |04/19/43| 85000
+2365|personnel  |05/11/47|120000
+5423|admin      |08/30/56|160000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cat emp1.lst 
+2233|a.k. shukla      |g.m        |sales      |12/12/52| 90000
+9876|jai sharma       |director   |production |03/12/50|130000
+5678|sumit chakrobarty|d.g.m      |marketing  |04/19/43| 85000
+2365|barun sengupta   |director   |personnel  |05/11/47|120000
+5423|n.k. gupta       |chairman   |admin      |08/30/56|160000
+1006|chanchal singhvi |director   |sales      |09/03/38|140000
+
+6213|karuna ganguly   |g.m.       |accounts   |06/05/62|105000 
+1265|s.n. dasgupta    |manager    |sales      |09/12/63| 90000
+
+4290|jayant Choudhury |executive  |production |09/07/50| 65000 
+2476|anil aggarwal    |manager    |sales      |05/01/59|110000
+6521|lalit chowdury   |director   |marketing  |09/26/45|125000
+3212|shyam saksena    |d.g.m.     |accounts   |12/12/55| 85000
+
+3564|sudhir Agarwal   |executive  |personnel  |07/06/47| 75000
+2345|j.b. saxena      |g.m.       |marketing  |03/12/45|110000
+0110|v.k agrawal      |g.m.       |marketing  |12/31/40| 95000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ mv ~/Downloads/lssproj 
+mv: missing destination file operand after '/home/manjunath/Downloads/lssproj'
+Try 'mv --help' for more information.
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ mv ~/Downloads/lssproj .
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ ls
+cutlist  cutlist2  emp1.lst  emp.lst  lssproj  shortlist  shortlist1  weeks.txt
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ sort lssproj 
+0110|sudarshan     	|g.m.       |marketing  |12/31/40| 95000
+1023|manthan    	|director   |personnel  |05/11/27|120000
+123|Karthik k   	|g.m        |sales      |12/12/23| 90000
+1314|harsh d       	|chairman   |admin      |08/30/26|160000
+1516|zain m   		|sales      		|09/03/38|140000 
+1718|rohhit   		|g.m.       |accounts   |06/05/62|105000 
+1920|mohith   		|manager    |sales      |09/12/63| 90000 
+2122|harshvadhana     	|executive  |production |09/07/50| 65000 
+2223|sohail |manager    |sales      |05/01/59	|	 |110000 
+2425|juanid   		|director   |marketing  |09/26/45|125000 
+2526|anas    		|d.g.m.     |accounts   |12/12/55| 85000 
+2728|amith    		|executive  |personnel  |07/06/47| 75000 
+2930|sushant     	|g.m.       |marketing  |03/12/45|110000 
+456|karthik g h         |director   |production |03/12/23|130000
+789|robert dylan     	|d.g.m      |marketing  |04/19/23| 85000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ nano 
+cutlist     cutlist2    emp1.lst    emp.lst     lssproj     shortlist   shortlist1  weeks.txt   
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ nano 
+cutlist     cutlist2    emp1.lst    emp.lst     lssproj     shortlist   shortlist1  weeks.txt   
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ nano lssproj 
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ sort lssproj 
+0110|sudarshan		|g.m.       |marketing  |12/31/40| 95000
+1023|manthan		|director   |personnel  |05/11/27|120000
+123|Karthik k		|g.m        |sales      |12/12/23| 90000
+1314|harsh d		|chairman   |admin      |08/30/26|160000
+1516|zain m		|sales	    |admin	|09/03/38|140000 
+1718|rohhi		|g.m.       |accounts   |06/05/62|105000 
+1920|mohith		|manager    |sales      |09/12/63| 90000 
+2122|harshvadhana	|executive  |production |09/07/50| 65000 
+2223|sohail		|manager    |sales      |05/01/59|110000 
+2425|juanid		|director   |marketing  |09/26/45|125000 
+2526|anas		|d.g.m.     |accounts   |12/12/55| 85000 
+2728|amith		|executive  |personnel  |07/06/47| 75000 
+2930|sushan		|g.m.       |marketing  |03/12/45|110000 
+456|karthik g h         |director   |production |03/12/23|130000
+789|robert dyla		|d.g.m      |marketing  |04/19/23| 85000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ sort -t "|" -k 2 lssproj 
+2728|amith		|executive  |personnel  |07/06/47| 75000 
+2526|anas		|d.g.m.     |accounts   |12/12/55| 85000 
+1314|harsh d		|chairman   |admin      |08/30/26|160000
+2122|harshvadhana	|executive  |production |09/07/50| 65000 
+2425|juanid		|director   |marketing  |09/26/45|125000 
+456|karthik g h         |director   |production |03/12/23|130000
+123|Karthik k		|g.m        |sales      |12/12/23| 90000
+1023|manthan		|director   |personnel  |05/11/27|120000
+1920|mohith		|manager    |sales      |09/12/63| 90000 
+789|robert dyla		|d.g.m      |marketing  |04/19/23| 85000
+1718|rohhi		|g.m.       |accounts   |06/05/62|105000 
+2223|sohail		|manager    |sales      |05/01/59|110000 
+0110|sudarshan		|g.m.       |marketing  |12/31/40| 95000
+2930|sushan		|g.m.       |marketing  |03/12/45|110000 
+1516|zain m		|sales	    |admin	|09/03/38|140000 
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ nano lssproj 
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ sort -t "|" -k 2 lssproj 
+2728|amith		|executive  |personnel  |07/06/47| 75000 
+2526|anas		|d.g.m.     |accounts   |12/12/55| 85000 
+1314|harsh d		|chairman   |admin      |08/30/26|160000
+2122|harshvadhana	|executive  |production |09/07/50| 65000 
+2425|juanid		|director   |marketing  |09/26/45|125000 
+0456|karthik g h        |director   |production |03/12/23|130000
+0123|Karthik k		|g.m        |sales      |12/12/23| 90000
+1023|manthan		|director   |personnel  |05/11/27|120000
+1920|mohith		|manager    |sales      |09/12/63| 90000 
+0789|robert dyla	|d.g.m      |marketing  |04/19/23| 85000
+1718|rohhi		|g.m.       |accounts   |06/05/62|105000 
+2223|sohail		|manager    |sales      |05/01/59|110000 
+0110|sudarshan		|g.m.       |marketing  |12/31/40| 95000
+2930|sushan		|g.m.       |marketing  |03/12/45|110000 
+1516|zain m		|sales	    |admin	|09/03/38|140000 
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ man sort
+
+[2]+  Stopped                 man sort
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ sort -d "|" -f 6 -n lssproj 
+sort: options '-dfn' are incompatible
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ sort -t "|" -k 6 -n lssproj 
+2122|harshvadhana	|executive  |production |09/07/50| 65000 
+2728|amith		|executive  |personnel  |07/06/47| 75000 
+0789|robert dyla	|d.g.m      |marketing  |04/19/23| 85000
+2526|anas		|d.g.m.     |accounts   |12/12/55| 85000 
+0123|Karthik k		|g.m        |sales      |12/12/23| 90000
+1920|mohith		|manager    |sales      |09/12/63| 90000 
+0110|sudarshan		|g.m.       |marketing  |12/31/40| 95000
+1718|rohhi		|g.m.       |accounts   |06/05/62|105000 
+2223|sohail		|manager    |sales      |05/01/59|110000 
+2930|sushan		|g.m.       |marketing  |03/12/45|110000 
+1023|manthan		|director   |personnel  |05/11/27|120000
+2425|juanid		|director   |marketing  |09/26/45|125000 
+0456|karthik g h        |director   |production |03/12/23|130000
+1516|zain m		|sales	    |admin	|09/03/38|140000 
+1314|harsh d		|chairman   |admin      |08/30/26|160000
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ sort -t "|" -k 6 -nr lssproj 
+1314|harsh d		|chairman   |admin      |08/30/26|160000
+1516|zain m		|sales	    |admin	|09/03/38|140000 
+0456|karthik g h        |director   |production |03/12/23|130000
+2425|juanid		|director   |marketing  |09/26/45|125000 
+1023|manthan		|director   |personnel  |05/11/27|120000
+2930|sushan		|g.m.       |marketing  |03/12/45|110000 
+2223|sohail		|manager    |sales      |05/01/59|110000 
+1718|rohhi		|g.m.       |accounts   |06/05/62|105000 
+0110|sudarshan		|g.m.       |marketing  |12/31/40| 95000
+1920|mohith		|manager    |sales      |09/12/63| 90000 
+0123|Karthik k		|g.m        |sales      |12/12/23| 90000
+2526|anas		|d.g.m.     |accounts   |12/12/55| 85000 
+0789|robert dyla	|d.g.m      |marketing  |04/19/23| 85000
+2728|amith		|executive  |personnel  |07/06/47| 75000 
+2122|harshvadhana	|executive  |production |09/07/50| 65000 
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ 
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ sort -t "|" -k 3,3 -k 2,2  lssproj 
+1314|harsh d		|chairman   |admin      |08/30/26|160000
+0789|robert dyla	|d.g.m      |marketing  |04/19/23| 85000
+2526|anas		|d.g.m.     |accounts   |12/12/55| 85000 
+2425|juanid		|director   |marketing  |09/26/45|125000 
+0456|karthik g h        |director   |production |03/12/23|130000
+1023|manthan		|director   |personnel  |05/11/27|120000
+2728|amith		|executive  |personnel  |07/06/47| 75000 
+2122|harshvadhana	|executive  |production |09/07/50| 65000 
+0123|Karthik k		|g.m        |sales      |12/12/23| 90000
+1718|rohhi		|g.m.       |accounts   |06/05/62|105000 
+0110|sudarshan		|g.m.       |marketing  |12/31/40| 95000
+2930|sushan		|g.m.       |marketing  |03/12/45|110000 
+1920|mohith		|manager    |sales      |09/12/63| 90000 
+2223|sohail		|manager    |sales      |05/01/59|110000 
+1516|zain m		|sales	    |admin	|09/03/38|140000 
+
+
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 4 lssproj 
+sales      
+production 
+marketing  
+personnel  
+admin      
+admin	
+accounts   
+sales      
+production 
+sales      
+marketing  
+accounts   
+personnel  
+marketing  
+marketing  
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 4 lssproj | sort
+accounts   
+accounts   
+admin	
+admin      
+marketing  
+marketing  
+marketing  
+marketing  
+personnel  
+personnel  
+production 
+production 
+sales      
+sales      
+sales      
+manjunath@Manjunath-Mi-NoteBook-Ultra:~/RVCE-lab/shell-script/29mar$ cut -d "|" -f 4 lssproj | sort | uniq
+accounts   
+admin	
+admin      
+marketing  
+personnel  
+production 
+sales      

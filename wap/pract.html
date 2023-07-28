@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>
+        XML to Table
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <main>
+        <div class="text-center m-3">
+            <h3> Xml to table </h3>
+            <button class="btn btn-primary" onclick="loadxml()">Click to get Data</button>
+        </div>
+        <center>
+        <table class="table text-center dark table-striped m-4 w-50 table-bordered  " style="box-shadow: 2px 2px 8px grey;" >
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody  id="mytable">
+                
+            </tbody>
+        </table></center>
+    </main>
+    <script>
+        function loadxml(){
+            var xmlhttp = new XMLHttpRequest
+            xmlhttp.onreadystatechange = function (){
+                if(this.readyState == 4 && this.status==200){
+                    myFunction(this)
+                }
+            }
+            xmlhttp.open("GET" ,"03.xml",true)
+            xmlhttp.send()
+            function myFunction (xml){
+               var  xmlDoc=xml.responseXML
+               var table=''
+                var x=xmlDoc.getElementsByTagName("student")
+                for(var i=0;i<x.length;i++){
+                    table+='<tr><td>'+x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+'</td></tr>'
+                    
+
+
+                }
+                document.getElementById("mytable").innerHTML=table
+            }
+        }
+
+    </script>
+</body>
+
+</html>
